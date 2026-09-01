@@ -1,0 +1,24 @@
+# Qt Creator
+.qtcreator/
+*.pro.user*
+*.qbs.user*
+CMakeLists.txt.user*
+
+# CMake / Build
+build/
+cmake-build-*/
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+
+# Temporary files
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
