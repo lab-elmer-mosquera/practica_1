@@ -4,6 +4,9 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+/*Problema 1. Escriba un programa que identi que si un carácter ingresado es una vocal, una consonante o ninguna de las 2 e imprima un mensaje según el caso.
+ * Nota: el formato de salida debe ser: no es una letra. a es una vocal. 5C es una consonante.*/
+
 void problema_1() {
     char c;
     cout << "Ingrese un caracter: ";
