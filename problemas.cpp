@@ -662,9 +662,111 @@ void problema_14(){
 
     cout << "Palindromo maximo encontrado: " << palindromo << " (" << multiplos[0] << " x " << multiplos[1] << ")\n";
 }
-void problema_15(){
-    problema_pendiente();
+
+/*
+
+    Un programa que recibe un número N impar y genere una matriz que sigue una
+   espiral.Después de generada la matriz, sume las diagonales e imprima el
+   resultado.
+
+    Por ejemplo, para N = 5 se debe imprimir:
+
+    21 22 23 24 25
+    20  7  8  9 10
+    19  6  1  2 11
+    18  5  4  3 12
+    17 16 15 14 13
+
+    El resultado de la suma de las diagonales es: 101
+
+*/
+void problema_15() {
+    cout << "Un programa que recibe un número N impar y genera una matriz que sigue una espiral.\n"
+            "Después de generada la matriz, sume las diagonales e imprima el resultado.\n";
+
+    int n{}, sum{};
+
+    cout << "\nIngres un numero impar: ";
+    cin >> n;
+
+    if (n % 2 == 0) {
+        cout << "entrada invalida, solo numero par" << endl;
+        return;
+    }
+
+    int fila = n / 2, columna = n / 2, pasos = 1, numero = 1;
+    int matriz[n][n];
+
+
+    for (int i = 0; i <= n-1; i++) {
+        for (int j = 0; j <= n-1; j++)
+            matriz[i][j] = 0;
+    }
+
+    matriz[fila][columna] = numero;
+
+    cout << "\n";
+
+    while (true) {
+        for (int de = 1; de <= pasos; de++) {
+            ++numero;
+            columna += 1;
+            matriz[fila][columna] = numero;
+
+            if (numero==n*n){
+                columna++;
+                break;
+            }
+        }
+
+
+        sum += matriz[fila][columna-1];
+        if (numero==n*n)
+            break;
+
+        for (int ab = 1; ab <= pasos; ab++) {
+            ++numero;
+            fila += 1;
+            matriz[fila][columna] = numero;
+        }
+
+        sum += matriz[fila][columna];
+        pasos++;
+
+        for (int de = 1; de <= pasos; de++) {
+            ++numero;
+            columna -= 1;
+            matriz[fila][columna] = numero;
+        }
+
+        sum += matriz[fila][columna];
+
+
+        for (int arr = 1; arr <= pasos; arr++) {
+            ++numero;
+            fila -= 1;
+            matriz[fila][columna] = numero;
+        }
+
+        sum += matriz[fila][columna];
+        pasos++;
+
+    }
+
+    for (int i = 0; i <= n-1; i++) {
+        for (int j = 0; j <= n-1; j++){
+            if (matriz[i][j] >= 0 && matriz[i][j] <= 9)
+                cout << "  ";
+            else
+                cout << " ";
+            cout << matriz[i][j];
+        }
+        cout << "\n";
+    }
+
+    cout << "El resultado de la suma de las diagonales es: " << sum << endl;
 }
+
 void problema_16(){
     problema_pendiente();
 }
