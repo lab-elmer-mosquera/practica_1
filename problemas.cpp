@@ -767,11 +767,77 @@ void problema_15() {
     cout << "El resultado de la suma de las diagonales es: " << sum << endl;
 }
 
-void problema_16(){
-    problema_pendiente();
+void problema_16() {
+    cout << "Sean∈N.Definimoslasucesi´ondeCollatzC(n)como: C0=n, Ck+1= Ck 2 , siCk%2=0 3Ck+1, siCk%2=1.\n";
+    int j;
+    cout << "Ingrese j: ";
+    cin >> j;
+
+    int mejorSemilla = 1;
+    int mejorLongitud = 0;
+
+    for (int n = 1; n < j; n++) {
+        int actual = n;
+        int longitud = 1; // la semilla cuenta como primer termino
+
+        while (actual != 1) {
+            if (actual % 2 == 0) {
+                actual = actual / 2;
+            } else {
+                actual = 3 * actual + 1;
+            }
+            longitud++;
+        }
+
+        if (longitud > mejorLongitud) {
+            mejorLongitud = longitud;
+            mejorSemilla = n;
+        }
+    }
+
+    cout << "La serie mas larga es con la semilla: " << mejorSemilla
+         << ", teniendo " << mejorLongitud << " terminos." << endl;
+
+    // Recalculamos la sucesion ganadora (no la guardamos antes, sin arreglos)
+    cout << "Serie: " << mejorSemilla;
+    int actual = mejorSemilla;
+    while (actual != 1) {
+        if (actual % 2 == 0) {
+            actual = actual / 2;
+        } else {
+            actual = 3 * actual + 1;
+        }
+        cout << ", " << actual;
+    }
+    cout << endl;
 }
-void problema_17(){
-    problema_pendiente();
+void problema_17() {
+    cout << "Escriba un programa que pida al usuario un numero k y encuentre e imprima el primer numero triangular con al menos k divisores. "
+            "El enesimo triangular es n(n + 1)/2. "
+            "Por ejemplo para k = 6 el programa debe imprimir: El numero es: 28, que tiene 6 divisores..\n";
+    int k;
+    cout << "Ingrese k: ";
+    cin >> k;
+
+    int n = 1;
+    int triangular;
+    int cantidadDivisores;
+
+    do {
+        triangular = n * (n + 1) / 2;
+
+        // Metodo simple de conteo (no el mas eficiente, pero valido para el curso)
+        cantidadDivisores = 0;
+        for (int d = 1; d <= triangular; d++) {
+            if (triangular % d == 0) {
+                cantidadDivisores++;
+            }
+        }
+
+        n++;
+    } while (cantidadDivisores < k);
+
+    cout << "El numero es: " << triangular << ", que tiene " << cantidadDivisores << " divisores." << endl;
 }
 
 void problema_pendiente(){
