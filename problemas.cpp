@@ -767,8 +767,12 @@ void problema_15() {
     cout << "El resultado de la suma de las diagonales es: " << sum << endl;
 }
 
+/*Sean∈N.Definimos la sucesion de CollatzC(n)como: C0=n, Ck+1= Ck 2 , siCk%2=0 3Ck+1, siCk%2=1*/
+
 void problema_16() {
-    cout << "Sean∈N.Definimoslasucesi´ondeCollatzC(n)como: C0=n, Ck+1= Ck 2 , siCk%2=0 3Ck+1, siCk%2=1.\n";
+    cout << "Un programa que recibe un numero natural j y calcula las series de Collatz para todas las semillas N menores que j.\n"
+            "Encuentra la semilla que genera la serie de Collatz mas larga, la cantidad de terminos y muestra dicha serie.\n"
+            "Ejemplo: para N = 10, la serie es 10, 5, 16, 8, 4, 2, 1..\n";
     int j;
     cout << "Ingrese j: ";
     cin >> j;
@@ -811,10 +815,14 @@ void problema_16() {
     }
     cout << endl;
 }
-void problema_17() {
-    cout << "Escriba un programa que pida al usuario un numero k y encuentre e imprima el primer numero triangular con al menos k divisores. "
+
+/*Escriba un programa que pida al usuario un numero k y encuentre e imprima el primer numero triangular con al menos k divisores. "
             "El enesimo triangular es n(n + 1)/2. "
-            "Por ejemplo para k = 6 el programa debe imprimir: El numero es: 28, que tiene 6 divisores..\n";
+            "Por ejemplo para k = 6 el programa debe imprimir: El numero es: 28, que tiene 6 divisores.*/
+
+void problema_17() {
+    cout << "Un programa que recibe un numero k y encuentra el primer numero triangular con al menos k divisores.\n"
+            "El enesimo numero triangular se obtiene mediante la formula n(n + 1) / 2..\n";
     int k;
     cout << "Ingrese k: ";
     cin >> k;
